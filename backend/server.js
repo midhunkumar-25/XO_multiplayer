@@ -92,8 +92,11 @@ io.on('connection', socket =>{
         if(socket.number===1){
             socket.broadcast.emit("player",2)
         }
-        else{
+        else if(socket.number===2){
             socket.broadcast.emit("player",1)
+        }
+        else{
+            emitGameOver(room, 0);
         }
         
       }
